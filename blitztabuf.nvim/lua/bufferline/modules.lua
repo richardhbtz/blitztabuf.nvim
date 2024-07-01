@@ -7,8 +7,7 @@ utils.btns()
 local M = {}
 
 M.CoverNvimTree = function()
-	return "%#NvimTreeNormal#"
-		.. (not require("custom.blitz").tree_on_the_left and "" or string.rep(" ", utils.getNvimTreeWidth()))
+	return "%#NvimTreeNormal#" .. (vim.g.nvimtree_side == "right" and "" or string.rep(" ", utils.getNvimTreeWidth()))
 end
 
 M.bufferlist = function()
